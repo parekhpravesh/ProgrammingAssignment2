@@ -6,7 +6,8 @@
 
 makeCacheMatrix <- function(x = matrix()) 
 {
-inv <- NULL
+		## Initialize the inverse as NULL
+		inv <- NULL
         
         set <- function(y)
         {
@@ -19,6 +20,7 @@ inv <- NULL
                 x
         }
         
+		## Use the solve function to calculate inverse
         setinv <- function(solve)
         {
                 inv <<- solve       
@@ -44,6 +46,7 @@ cacheSolve <- function(x, ...)
         ## Return a matrix that is the inverse of 'x'
 		inv <- x$getinv()
         
+		## Check if cached inverse exists or not. If yes, return the same along with a message
         if(!is.null(inv))
         {
                 message("Getting cached inverse")
